@@ -13,6 +13,8 @@ import { UserRegComponent } from './user-reg/user-reg.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     UserRegComponent,
     BookingsComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    ViewBookingsComponent
   ],
   imports: [
     BrowserModule,

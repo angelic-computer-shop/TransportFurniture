@@ -7,6 +7,8 @@ import { UserRegComponent } from './user-reg/user-reg.component';
 import { DriverRegComponent } from './driver-reg/driver-reg.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { ViewBookingsComponent } from './view-bookings/view-bookings.component';
 
 const routes: Routes = [
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'bookings', component:BookingsComponent},
  {path:'navbar',component:NavbarComponent},
    {path: 'login', component:LoginComponent},
+   {path:'footer', component:FooterComponent},
+   {path:'viewBookings', component:ViewBookingsComponent},
   
   
    { path: '', redirectTo: 'home', pathMatch: 'full' }
