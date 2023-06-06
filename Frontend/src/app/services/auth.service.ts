@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 
-const AUTH_API = 'http://localhost:3000/users/';
+const AUTH_API = 'http://localhost:3000/drivers/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,11 +20,11 @@ export class AuthService {
   
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signin',
       {
-        username,
+        email,
         password,
       },
       httpOptions
@@ -38,15 +38,20 @@ export class AuthService {
 
   
 
+//Register as a driver
 
-
-  register(username: string, email: string, password: string): Observable<any> {
+  register(name: string, email: string, password: string,surname: string, idno: number,trucktype: string,cellno: number,licenseno: string): Observable<any> {
     return this.http.post(
       AUTH_API + 'signup',
       {
-        username,
+        name,
+        surname,
+        idno,
+        trucktype,
+        licenseno,
+        cellno,
         email,
-        password,
+        password
       },
       httpOptions
     );

@@ -6,44 +6,164 @@
             class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example13">Email address</label>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example23">Password</label>
-            </div>
-  
-            <div class="d-flex justify-content-around align-items-center mb-4">
-              <!-- Checkbox -->
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                <label class="form-check-label" for="form1Example3"> Remember me </label>
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form
+            *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+            >
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="form-group">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    [(ngModel)]="form.name"
+                    required
+                    minlength="8"
+                    #name="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                  />
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="surname"
+                    [(ngModel)]="form.surname"
+                    required
+                    minlength="3"
+                    #surname="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && surname.errors }"
+                  />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                  </div>
+                </div>
               </div>
-              <a href="#!">Forgot password?</a>
-            </div>
-  
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
-  
-            <div class="divider d-flex align-items-center my-4">
-              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-            </div>
-  
-            <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-              role="button">
-              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
-            </a>
-            <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
-              role="button">
-              <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
-  
-          </form>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    type="number"
+                    class="form-control"
+                    name="idno"
+                    [(ngModel)]="form.idno"
+                    required
+                    minlength="13"
+                    #idno="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && idno.errors }"
+                  />
+                    <label class="form-label" for="form3Example1">ID no</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                   
+
+                    <input
+          type="text"
+          class="form-control"
+          name="trucktype"
+          [(ngModel)]="form.password"
+          required
+          minlength="8"
+          #trucktype="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && trucktype.errors }"
+        />
+                    <label class="form-label" for="form3Example2">Truck Model</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    type="text"
+                    class="form-control"
+                    name="licenseno"
+                    [(ngModel)]="form.password"
+                    required
+                    minlength="8"
+                    #licenseno="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && licenseno.errors }"
+                  />
+                    <label class="form-label" for="form3Example1">License no</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input
+                    type="number"
+                    class="form-control"
+                    name="cellno"
+                    [(ngModel)]="form.cellno"
+                    required
+                    minlength="8"
+                    #cellno="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && cellno.errors }"
+                  />
+                    <label class="form-label" for="form3Example2">Cell no</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input
+                type="email"
+                class="form-control"
+                name="email"
+                [(ngModel)]="form.email"
+                required
+                minlength="8"
+                #email="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+              />
+                <label class="form-label" for="form3Example3">Email</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="form.password"
+                required
+                minlength="8"
+                #password="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+              />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+            
+              
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button> <p >
+                Already have an account?<a routerLink="/login" class="ml-1 font-medium text-blue-400">Login </a>
+                </p>
+
+        
+               
+            
+                
+</div>
+                
+           
+            </form>
         </div>
       </div>
     </div>
